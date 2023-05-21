@@ -1,6 +1,8 @@
+let currentIndex = 0
+
 let reviews = [
     {   
-        id : '1',
+        id : currentIndex,
         name: 'Nikole',
         image:'image/bag.jpg',
         publicationDate: '27/07/21',
@@ -9,7 +11,7 @@ let reviews = [
         feedback: 'The quality of materials and finishes is impressive. The bag is well made and looks durable. The design of the bag is simple yet elegant. It is suitable for both casual outings and more formal occasions.'
     },
     {   
-        id : '2',
+        id : currentIndex,
         name: 'Den',
         image: 'image/boots.jpg',
         publicationDate: '30/01/21',
@@ -18,7 +20,7 @@ let reviews = [
         feedback:'The men`s boots that I purchased turned out to be the perfect choice for me. They look very stylish and elegant, which allows me to wear them both at work and in everyday looks. The quality of materials and workmanship of the boots is at a high level. They are well-tailored and have a durable outsole, which guarantees their durability.'
     },
     {   
-        id : '3',
+        id : currentIndex,
         name: 'Liza',
         image: 'image/coat.jpg',
         publicationDate: '30/04/21',
@@ -31,7 +33,7 @@ let reviews = [
 const container = document.getElementById("container")
 
 function renderReviews() {
-    container.innerHTML = ""
+    const review = reviews[currentIndex]
         reviews.innerHTML = `
         <div class="card_reviews>
             <img class="img_book" src="${review.image}" alt="">
@@ -49,11 +51,11 @@ function renderReviews() {
 const myButtonRight = document.getElementById('button-right')
 
 myButtonRight.addEventListener('click', () => {
-    id++
+    currentIndex++
 })
 
 const myButtonLeft = document.getElementById('button-left')
 
 myButtonLeft.addEventListener('click', () => {
-    id--
+    currentIndex--
 })
