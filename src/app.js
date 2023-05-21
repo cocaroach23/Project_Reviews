@@ -2,7 +2,7 @@ let currentIndex = 0
 
 let reviews = [
     {   
-        id : currentIndex,
+        
         name: 'Nikole',
         image:'image/bag.jpg',
         publicationDate: '27/07/21',
@@ -11,7 +11,7 @@ let reviews = [
         feedback: 'The quality of materials and finishes is impressive. The bag is well made and looks durable. The design of the bag is simple yet elegant. It is suitable for both casual outings and more formal occasions.'
     },
     {   
-        id : currentIndex,
+        
         name: 'Den',
         image: 'image/boots.jpg',
         publicationDate: '30/01/21',
@@ -20,7 +20,7 @@ let reviews = [
         feedback:'The men`s boots that I purchased turned out to be the perfect choice for me. They look very stylish and elegant, which allows me to wear them both at work and in everyday looks. The quality of materials and workmanship of the boots is at a high level. They are well-tailored and have a durable outsole, which guarantees their durability.'
     },
     {   
-        id : currentIndex,
+        
         name: 'Liza',
         image: 'image/coat.jpg',
         publicationDate: '30/04/21',
@@ -34,7 +34,7 @@ const container = document.getElementById("container")
 
 function renderReviews() {
     const review = reviews[currentIndex]
-        reviews.innerHTML = `
+        container.innerHTML = `
         <div class="card_reviews>
             <img class="img_book" src="${review.image}" alt="">
                 <div class="card_items">
@@ -51,11 +51,27 @@ function renderReviews() {
 const myButtonRight = document.getElementById('button-right')
 
 myButtonRight.addEventListener('click', () => {
-    currentIndex++
+    //currentIndex++ 
+    if ( currentIndex < 2){
+        currentIndex++ 
+    } else {
+        сorrentIndex = 0
+    }
+
+
+    renderReviews()
 })
 
 const myButtonLeft = document.getElementById('button-left')
 
 myButtonLeft.addEventListener('click', () => {
-    currentIndex--
+    //currentIndex--
+    if ( currentIndex >= -1){
+        currentIndex-- 
+    } else {
+        сorrentIndex = 2
+    }
+    renderReviews()
 })
+
+renderReviews()
