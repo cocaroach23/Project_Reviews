@@ -52,10 +52,10 @@ const myButtonRight = document.getElementById('button-right')
 
 myButtonRight.addEventListener('click', () => {
     //currentIndex++ 
-    if ( currentIndex < 2){
+    if ( currentIndex <= 2){
         currentIndex++ 
     } else {
-        сorrentIndex = 0
+        currentIndex = 0
     }
 
 
@@ -66,10 +66,10 @@ const myButtonLeft = document.getElementById('button-left')
 
 myButtonLeft.addEventListener('click', () => {
     //currentIndex--
-    if ( currentIndex >= -1){
+    if ( currentIndex >= 0){
         currentIndex-- 
     } else {
-        сorrentIndex = 2
+        currentIndex = 2
     }
     renderReviews()
 })
