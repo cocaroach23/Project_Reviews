@@ -4,7 +4,7 @@ let reviews = [
     {   
         
         name: 'Nikole',
-        image:'image/bag.jpg',
+        image:'/src/image/bag.jpg',
         publicationDate: '27/07/21',
         datePurchases: '20/07/21',
         grade: '5',
@@ -13,7 +13,7 @@ let reviews = [
     {   
         
         name: 'Den',
-        image: 'image/boots.jpg',
+        image: '/src/image/boots.jpg',
         publicationDate: '30/01/21',
         datePurchases: '30/01/21',
         grade: '5',
@@ -22,7 +22,7 @@ let reviews = [
     {   
         
         name: 'Liza',
-        image: 'image/coat.jpg',
+        image: '/src/image/coat.jpg',
         publicationDate: '30/04/21',
         datePurchases: '25/04/21',
         grade: '4',
@@ -52,7 +52,7 @@ const myButtonRight = document.getElementById('button-right')
 
 myButtonRight.addEventListener('click', () => {
     //currentIndex++ 
-    if ( currentIndex <= 2){
+    if ( currentIndex < 2){
         currentIndex++ 
     } else {
         currentIndex = 0
@@ -66,7 +66,7 @@ const myButtonLeft = document.getElementById('button-left')
 
 myButtonLeft.addEventListener('click', () => {
     //currentIndex--
-    if ( currentIndex >= 0){
+    if ( currentIndex > 0){
         currentIndex-- 
     } else {
         currentIndex = 2
