@@ -74,4 +74,13 @@ myButtonLeft.addEventListener('click', () => {
     renderReviews()
 })
 
+const myButtonRandom = document.getElementById('random-feedback')
+
+myButtonRandom.addEventListener('click',() => {
+    currentIndex = Math.random(0 , 3) 
+    
+    renderReviews()
+}
+)
+console.log(myButtonRandom)
 renderReviews()

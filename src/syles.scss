@@ -1,9 +1,7 @@
 *{
     box-sizing: border-box;
-    p:first-child{
-    font-family: 'PT Sans Narrow';
-}
     
+    //font-family: 'PT Sans Narrow'; 
 }
 
 .card_reviews {
@@ -17,6 +15,8 @@
 .container {
     text-align: center;
     hyphens: auto;
+    //font-family: 'PT Sans Narrow';
+    font-size: 24px;
 }
 
 .buttons {
@@ -31,15 +31,14 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    font-size: 22px;
+    font-family: 'PT Sans Narrow';
 }
 
 .card_name {
     font-family: 'PT Serif', serif;
     font-size: 25px;
     font-weight: 700;
-}
-
-.button {
-    background-image: url(/src/icon/icon-right-arrow.png);
     
 }
+
