@@ -1,5 +1,3 @@
-const { max } = require("date-fns");
-
 let currentIndex = 0;
 
 let reviews = [

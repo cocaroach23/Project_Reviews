@@ -1,4 +1,4 @@
-yarn {
+{
   "name": "my-project",
   "scripts": {
     "dev": "parcel src/index.html",
@@ -6,8 +6,8 @@ yarn {
     "format": "yarn prettier --write ."
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "2.8.3",
-    "parcel": "^2.9.1",
+    "@parcel/transformer-sass": "^2.9.1",
+    "parcel": "^2.8.3",
     "prettier": "2.8.8"
   },
   "dependencies": {
