@@ -1,3 +1,5 @@
+const { max } = require("date-fns")
+
 let currentIndex = 0
 
 let reviews = [
@@ -77,10 +79,10 @@ myButtonLeft.addEventListener('click', () => {
 const myButtonRandom = document.getElementById('random-feedback')
 
 myButtonRandom.addEventListener('click',() => {
-    currentIndex = Math.random(0 , 3) 
+    currentIndex = Math.floor(Math.random() * 3)
     
     renderReviews()
-}
-)
-console.log(myButtonRandom)
+})
+
+
 renderReviews()
