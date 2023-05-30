@@ -1,42 +1,42 @@
-const { max } = require("date-fns")
+const { max } = require("date-fns");
 
-let currentIndex = 0
+let currentIndex = 0;
 
 let reviews = [
-    {   
-        
-        name: 'Nikole',
-        image:'/src/image/bag.jpg',
-        publicationDate: '27/07/21',
-        datePurchases: '20/07/21',
-        grade: '5',
-        feedback: 'The quality of materials and finishes is impressive. The bag is well made and looks durable. The design of the bag is simple yet elegant. It is suitable for both casual outings and more formal occasions.'
-    },
-    {   
-        
-        name: 'Den',
-        image: '/src/image/boots.jpg',
-        publicationDate: '30/01/21',
-        datePurchases: '30/01/21',
-        grade: '5',
-        feedback:'The men`s boots that I purchased turned out to be the perfect choice for me. They look very stylish and elegant, which allows me to wear them both at work and in everyday looks. The quality of materials and workmanship of the boots is at a high level. They are well-tailored and have a durable outsole, which guarantees their durability.'
-    },
-    {   
-        
-        name: 'Liza',
-        image: '/src/image/coat.jpg',
-        publicationDate: '30/04/21',
-        datePurchases: '25/04/21',
-        grade: '4',
-        feedback: 'The coat has a stylish and fashionable design that stands out from other coats. I love its silhouette and the color scheme that goes well with my wardrobe. The quality of the materials is also decent. However, there are some points that do not allow me to give it a 5. For example, the collar is a bit stiff and uncomfortable, which causes some discomfort when worn.'
-    }
-]
+  {
+    name: "Nikole",
+    image: "/src/image/bag.jpg",
+    publicationDate: "27/07/21",
+    datePurchases: "20/07/21",
+    grade: "5",
+    feedback:
+      "The quality of materials and finishes is impressive. The bag is well made and looks durable. The design of the bag is simple yet elegant. It is suitable for both casual outings and more formal occasions.",
+  },
+  {
+    name: "Den",
+    image: "/src/image/boots.jpg",
+    publicationDate: "30/01/21",
+    datePurchases: "30/01/21",
+    grade: "5",
+    feedback:
+      "The men`s boots that I purchased turned out to be the perfect choice for me. They look very stylish and elegant, which allows me to wear them both at work and in everyday looks. The quality of materials and workmanship of the boots is at a high level. They are well-tailored and have a durable outsole, which guarantees their durability.",
+  },
+  {
+    name: "Liza",
+    image: "/src/image/coat.jpg",
+    publicationDate: "30/04/21",
+    datePurchases: "25/04/21",
+    grade: "4",
+    feedback:
+      "The coat has a stylish and fashionable design that stands out from other coats. I love its silhouette and the color scheme that goes well with my wardrobe. The quality of the materials is also decent. However, there are some points that do not allow me to give it a 5. For example, the collar is a bit stiff and uncomfortable, which causes some discomfort when worn.",
+  },
+];
 
-const container = document.getElementById("container")
+const container = document.getElementById("container");
 
 function renderReviews() {
-    const review = reviews[currentIndex]
-        container.innerHTML = `
+  const review = reviews[currentIndex];
+  container.innerHTML = `
         <div class="card_reviews>
             <img class="img_book" src="${review.image}" alt="">
                 <div class="card_items">
@@ -47,42 +47,40 @@ function renderReviews() {
                     <p class="datePurchases">${review.datePurchases}</p>
                 </div>
         </div>
-    `
+    `;
 }
 
-const myButtonRight = document.getElementById('button-right')
+const myButtonRight = document.getElementById("button-right");
 
-myButtonRight.addEventListener('click', () => {
-    //currentIndex++ 
-    if ( currentIndex < 2){
-        currentIndex++ 
-    } else {
-        currentIndex = 0
-    }
+myButtonRight.addEventListener("click", () => {
+  //currentIndex++
+  if (currentIndex < 2) {
+    currentIndex++;
+  } else {
+    currentIndex = 0;
+  }
 
+  renderReviews();
+});
 
-    renderReviews()
-})
+const myButtonLeft = document.getElementById("button-left");
 
-const myButtonLeft = document.getElementById('button-left')
+myButtonLeft.addEventListener("click", () => {
+  //currentIndex--
+  if (currentIndex > 0) {
+    currentIndex--;
+  } else {
+    currentIndex = 2;
+  }
+  renderReviews();
+});
 
-myButtonLeft.addEventListener('click', () => {
-    //currentIndex--
-    if ( currentIndex > 0){
-        currentIndex-- 
-    } else {
-        currentIndex = 2
-    }
-    renderReviews()
-})
+const myButtonRandom = document.getElementById("random-feedback");
 
-const myButtonRandom = document.getElementById('random-feedback')
+myButtonRandom.addEventListener("click", () => {
+  currentIndex = Math.floor(Math.random() * 3);
 
-myButtonRandom.addEventListener('click',() => {
-    currentIndex = Math.floor(Math.random() * 3)
-    
-    renderReviews()
-})
+  renderReviews();
+});
 
-
-renderReviews()
+renderReviews();
